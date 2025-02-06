@@ -55,7 +55,7 @@ int touchDanger(){
     return 0;
 }
 
-void plotSnake(){
+void plotpacman(){
     setfillstyle(SOLID_FILL, BLACK);
     floodfill(previous_x, previous_y, WHITE);
     setfillstyle(SOLID_FILL, GREEN);
@@ -76,7 +76,6 @@ void plotSnake(){
 
 void movement(){
     FILE *file;
-    plotSnake();
 
     file = fopen("ARROW.txt", "rt");
     if (file) {
@@ -92,7 +91,7 @@ void movement(){
         if(present_y < 5){
             present_y = 430;
         }
-        plotSnake();
+        plotpacman();
         previous_y = present_y;
         delay(waiting);
         break;
@@ -102,7 +101,7 @@ void movement(){
         if(present_x < 5){
             present_x = 430;
         }
-        plotSnake();
+        plotpacman();
         previous_x = present_x;
         delay(waiting);
         break;
@@ -112,7 +111,7 @@ void movement(){
         if(present_y > 430){
             present_y = 5;
         }
-        plotSnake();
+        plotpacman();
         previous_y = present_y;
         delay(waiting);
         break;
@@ -122,7 +121,7 @@ void movement(){
         if(present_x > 430){
             present_x = 5;
         }
-        plotSnake();
+        plotpacman();
         previous_x = present_x;
         delay(waiting);
         break;
